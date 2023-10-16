@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>百度</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            width: 500px;
+            height: 50px;
+            padding-left: 20px;
+            display: block;
+            margin: 150px auto;
+            outline: none;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            width: 500px;
+            margin: -151px auto;
+            border: 1px solid black;
+            list-style: none;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        ul>li {
+            width: 500px;
+            height: 30px;
+            list-style: none;
+            line-height: 30px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        ul>li:hover {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=qq&fenlei=256&rsv_pq=0xd50bccc500014103&rsv_t=ad6e07Chb5e1YnxSZgK88kuFj9lB2u36JBSWshIa2EK76d4%2ByJ6yamvrJl%2Fz&rqlang=en&rsv_enter=1&rsv_dl=tb&rsv_sug3=3&rsv_sug1=2&rsv_sug7=101&rsv_sug2=0&rsv_btype=i&prefixsug=qq&rsp=1&inputT=1694&rsv_sug4=3366
+    </ul>
+    <script>
+        let inp = document.querySelector('input')
+        let ul = document.querySelector('ul')
+        // 给inp绑定输入事件
+    inp.oninput = function () {
+      // 获取输入内容
+      let keyWord = this.value;
+      // 利用jsonp 跨域请求地址
+      // 创建script标签
+      let script = document.createElement('script');
+      // 设置跨域地址(百度地址)
+      script.src = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=26350&wd=${keyWord}&bs=123&csor=3&pwd=123&sugmode=2&hot_launch=0&cb=getFn&_=1696839056300`;
+      // 将script追加到body中
+        document.body.appendChild(script);
+        script.remove();//移除页面中的script元素
+      }
+      //
+    </script>
+</body>
+
+</html>

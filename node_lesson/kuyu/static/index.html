@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>自己搭建的服务器打开的页面</h1>
+    <button>点击跨域跳转</button>
+</body>
+
+</html>
+<script>
+    const html = document.documentElement;
+    document.querySelector('button').onclick = () => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('get', '/baidu');
+        xhr.send();
+        xhr.onload = () => {
+            // console.log(xhr.responseText)
+            html.innerHTML=xhr.response
+        }
+    }
+</script>

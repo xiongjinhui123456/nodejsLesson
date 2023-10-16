@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../文件预览"
+		},
+		{
+			"path": "../../node-lessons"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Default Dark+",
+		"git.ignoreLimitWarning": true
+	}
+}
